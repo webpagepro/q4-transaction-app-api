@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    .container{
+      border: 1px solid #000;
+      display:flex;
+      flex-wrap:wrap;
+      width:100%;
+    }
+
+    .page_title{
+      min-width:100%;
+      text-align:center;
+      
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .boxes-container{
+      display:flex;
+    }
+
+    .boxes{
+      border: 1px solid black;
+      margin: 10px;
+      padding: 10px;
+      width:250px;
+      height:50px;
+ 
+
+    }
+    
+    input["type=submit"]{border-radius:6px;
+       background-color:#333;
+       color:#fff;
+    }
+
+    input["type=submit"]:hover{
+    background-color:#ccc;
+    color:#000;
+  }
+    .doctor_login a{
+      border: 1px solid black;
+    
+ }
+ .doctor_login {
+text-align:right;
+right:60px; position:relative;
+ }
+
+.book{
+  text-align:right;
+  
+  
+}
+  .book a{
+    border: 1px solid black;margin: 10px;
+  padding: 10px;
+      }
+
+    </style>
+
+  </head>
+  <body>
+  <div class="container">
+  <div class="page_title"> Initial Users  
+  <div class="user_login"><a href="/users">Users</a></div></div>
+
+  
+  <% for(let i = 0; i < persons.length; i++){ %>
+  <div class="boxes-container">
+  <div class="boxes">
+
+ 
+ <%= persons[i].email; %>
+
+     <div class="persons"><a href="/users/<%=persons[i].id%>">User</a></div>
+   </div> 
+
+    </div>
+<% } %>
+  </body>
+</html>

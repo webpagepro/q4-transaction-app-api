@@ -1,0 +1,30 @@
+{
+  "name": "transaction-app-api",
+  "version": "1.0.0",
+  "description": "Our next goal is to build an api utilizing the database we found most efficient in the last assignment.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theycallmethetailor/transaction-app-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theycallmethetailor/transaction-app-api/issues"
+  },
+  "homepage": "https://github.com/theycallmethetailor/transaction-app-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cowsay": "^1.4.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.10",
+    "session": "^0.1.0"
+  }
+}
