@@ -14,12 +14,14 @@ module.exports = {
     knex('users')
       .where('id', req.params.id)
       .then(user => res.json(user))
+      console.log(user);
   },
   addOne(req, res) {
     knex('users')
       .insert(req.body)
       .returning('*')
-      .then(newuser => res.json(newUser))
+      .then(newUser => res.json(newUser))
+      console.log(newUser);
   },
   updateOne(req, res) {
     knex('users')
