@@ -3,9 +3,9 @@ const knex = require("../db/knex.js");
 module.exports = {
   index: function (req, res) {
     knex('users')
-      .then((persons) => {
-        res.render('index', { 'persons': persons });
-
+      .then(persons => {
+        //res.rener('index', { 'persons': persons });
+        res.json(persons)
         console.log(persons);
       })
   },

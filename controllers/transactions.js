@@ -1,48 +1,31 @@
 const knex = require("../db/knex.js");
 
 module.exports = {
-  getAll(req, res) {
+  getAllTrans(req, res) {
     knex('transactions')
       .orderBy('id', 'asc')
-      .then(transactions => res.json(transactions))
+      .then(transaction => res.json(transaction))
   },
-  getOne(req, res) {
+  getTrans(req, res) {
     knex('transactions')
       .where('id', req.params.id)
       .then(transaction => res.json(transaction))
   },
-  addOne(req, res) {
+  addTrans(req, res) {
     knex('transactions')
       .insert(req.body)
       .returning('*')
       .then(newTransaction => res.json(newTransaction))
   },
-  updateOne(req, res) {
+  updateTrans(req, res) {
     knex('transactions')
       .where('id', req.params.id)
       .update(req.body)
       .returning('*')
       .then(updatedTransacton => res.json(updatedTransacton))
   },
-  addToCart(req, res) {
-    knex('transactions')
-      .where('id', req.params.id)
-      .update({
-        inCart: true
-      })
-      .returning('*')
-      .then(updatedTransaction => res.json(updatedTransaction))
-  },
-  removeFromCart(req, res) {
-    knex('transactions')
-      .where('id', req.params.id)
-      .update({
-        inCart: false
-      })
-      .returning('*')
-      .then(updatedTransactiion => res.json(updatedTransaction))
-  },
-  deletetransaction(req, res) {
+  
+  deleteTrans(req, res) {
     knex('transactions')
       .where('id', req.params.id)
       .del()
