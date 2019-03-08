@@ -18,10 +18,12 @@ module.exports = {
   },
   addOne(req, res) {
     knex('users')
-      .insert(req.body)
-      .returning('*')
+      .insert({
+          "email": req.body.email,
+          "password":req.body.password
+      })
+    //  .returning('*')
       .then(newUser => res.json(newUser))
-      console.log(newUser);
   },
   updateOne(req, res) {
     knex('users')
@@ -30,7 +32,7 @@ module.exports = {
       .returning('*')
       .then(updatedUser => res.json(updatedUser))
   },
-  deleteuser(req, res) {
+  deleteUser(req, res) {
     knex('users')
       .where('id', req.params.id)
       .del()
