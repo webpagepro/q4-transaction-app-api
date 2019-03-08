@@ -10,28 +10,27 @@ module.exports = {
       })
   },
 
-  getOne(req, res) {
+  getUser(req, res) {
     knex('users')
       .where('id', req.params.id)
       .then(user => res.json(user))
-      console.log(user);
   },
-  addOne(req, res) {
+
+  addUser(req, res) {
     knex('users')
-      .insert({
-          "email": req.body.email,
-          "password":req.body.password
-      })
-    //  .returning('*')
+      .insert(req.body)
+      .returning('*')
       .then(newUser => res.json(newUser))
   },
-  updateOne(req, res) {
+
+  updateUser(req, res) {
     knex('users')
       .where('id', req.params.id)
       .update(req.body)
       .returning('*')
       .then(updatedUser => res.json(updatedUser))
   },
+
   deleteUser(req, res) {
     knex('users')
       .where('id', req.params.id)
