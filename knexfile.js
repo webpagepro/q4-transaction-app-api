@@ -5,8 +5,8 @@ module.exports = {
             database: "transaction_app",
             host: 'localhost',
             port: '8889',
-            user: 'root',
-            password: 'root'
+            user: '',
+            password: ''
         },
         migrations: {
             directory: __dirname + '/db/migrations',
