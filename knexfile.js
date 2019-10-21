@@ -2,9 +2,9 @@ module.exports = {
     development: {
         client: "mysql",
         connection: {
-            database: "transaction_app",
-            host: 'localhost',
-            port: '8889',
+            database: "",
+            host: '',
+            port: '',
             user: '',
             password: ''
         },
